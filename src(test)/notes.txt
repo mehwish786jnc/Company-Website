@@ -1,0 +1,106 @@
+JSX(JavaScript XML) - used to write html tags in it. Should have one enclosing tag.(<></>)
+render - React renders html to webpage using function ReactDOM.render()
+render multiple html elements:-
+1. using square brackects
+    root.render[
+    <h1>Hello</h1>,
+    <h2>How are you</h2>,
+]
+2.using fragment <></> or any html tag to wrap up the whole thing.
+
+
+//Expressions
+expressions:- using {}.
+expressions example:-
+const name2 = prompt("Enter name pls");//Prompt
+root.render(
+    <>
+    <h1>Hello</h1>
+    <h2>How are you {name} {name2}</h2>
+    </>
+)
+
+
+//Date function
+const date = Date();
+root.render(
+    <>
+    <h1>Hello</h1>
+    <h2>{date}</h2>
+    </>
+)
+
+
+//other Date functions
+getHours()
+getMinutes()
+getSeconds()
+getDate()
+getMonth()
+getDay()
+toLocaleTimeString()
+toLocaleDateString()
+Example:-
+const root=ReactDOM.createRoot(document.getElementById('root'));
+const date = new Date();
+const h = date.getHours()
+const m = date.getMinutes()
+const s = date.getSeconds()
+
+
+//If else condition
+if(h>17)
+{
+    alert("good evening") //Prints a prompt
+}
+else if(h>12)
+{
+    alert("Good afternoon")
+}
+else{
+    alert("Good morning")
+}
+
+
+//JSX img tag
+1.From src file
+import p1 from './a1.jpg' 
+<img src={p1}/>
+2. From public folder
+<img src="a1.jpg"/>
+
+
+
+//CSS in React(render)
+1. Inline css doesn't work
+create an object:-
+const heading={
+    color:"red",
+    fontFamily:"arial", //font-family is not valid, type fontFamily
+    backgroundColor:"yellow", //background-color not valid
+}
+root.render(
+    <>
+    <h1 style={heading}>Hello</h1>
+    </>
+)
+2. Internal css only in html file so no :/
+3. External css: - import './style.css'
+4. refer to class in css:- <h2 className="txt"></h2>
+
+
+
+//Components
+function Comptest(){
+    return <h2>Wassup</h2> 
+}
+root.render(
+    <>
+    <Comptest/> //Function call in JSX
+    </>
+)
+
+
+
+
+
